@@ -15,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'Api'], function () {
     Route::post('user/register', 'UserController@register');
+    Route::post('reminders', 'ReminderController@get');
+    Route::post('reminder/create', 'ReminderController@create');
+    Route::put('reminder/{id}', 'ReminderController@update');
+    Route::delete('reminder/{id}', 'ReminderController@destroy');
 });
