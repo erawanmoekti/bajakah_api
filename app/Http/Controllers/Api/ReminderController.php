@@ -35,7 +35,6 @@ class ReminderController extends Controller
     {
         $result = true;
         $message = '';
-        $data = '';
 
         try {
             $data = $request->all();
@@ -49,8 +48,7 @@ class ReminderController extends Controller
 
         return response()->json([
             'result' => $result,
-            'message' => $message,
-            'data' => $data
+            'message' => $message
         ]);
     }
 
@@ -58,7 +56,6 @@ class ReminderController extends Controller
     {
         $result = true;
         $message = '';
-        $data = '';
 
         try {
             $data = $request->all();
@@ -70,8 +67,7 @@ class ReminderController extends Controller
 
         return response()->json([
             'result' => $result,
-            'message' => $message,
-            'data' => $data
+            'message' => $message
         ]);
     }
 
@@ -79,7 +75,6 @@ class ReminderController extends Controller
     {
         $result = true;
         $message = '';
-        $data = '';
 
         try {
             Reminder::find($id)->delete();
@@ -90,8 +85,7 @@ class ReminderController extends Controller
 
         return response()->json([
             'result' => $result,
-            'message' => $message,
-            'data' => $data
+            'message' => $message
         ]);
     }
 }
