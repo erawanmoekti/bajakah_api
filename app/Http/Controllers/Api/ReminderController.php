@@ -18,7 +18,7 @@ class ReminderController extends Controller
 
         try {
             $user_id = $request->user_id;
-            $data = Reminder::where('user_id', '=', $user_id)->get();
+            $data = Reminder::where('user_id', '=', $user_id)->orderBy('jam')->get();
         } catch (Exception $e) {
             $result = false;
             $message = $e->getMessage();
