@@ -19,4 +19,6 @@ Route::group(['namespace' => 'Api'], function () {
     Route::post('reminder/create', 'ReminderController@create');
     Route::put('reminder/{id}', 'ReminderController@update');
     Route::delete('reminder/{id}', 'ReminderController@destroy');
+
+    Route::post('feedback/create', 'FeedbackController@create');
 });
