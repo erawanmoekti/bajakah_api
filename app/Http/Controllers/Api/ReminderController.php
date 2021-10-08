@@ -39,6 +39,13 @@ class ReminderController extends Controller
         try {
             $data = $request->all();
             $data['id'] = Uuid::uuid4()->toString();
+            $data["sunday"] = $data["sunday"] === 'true' ? true : false;
+            $data["monday"] = $data["monday"] === 'true' ? true : false;
+            $data["tuesday"] = $data["tuesday"] === 'true' ? true : false;
+            $data["wednesday"] = $data["wednesday"] === 'true' ? true : false;
+            $data["thursday"] = $data["thursday"] === 'true' ? true : false;
+            $data["friday"] = $data["friday"] === 'true' ? true : false;
+            $data["saturday"] = $data["saturday"] === 'true' ? true : false;
 
             Reminder::create($data);
         } catch (Exception $e) {
@@ -59,6 +66,13 @@ class ReminderController extends Controller
 
         try {
             $data = $request->all();
+            $data["sunday"] = $data["sunday"] === 'true' ? true : false;
+            $data["monday"] = $data["monday"] === 'true' ? true : false;
+            $data["tuesday"] = $data["tuesday"] === 'true' ? true : false;
+            $data["wednesday"] = $data["wednesday"] === 'true' ? true : false;
+            $data["thursday"] = $data["thursday"] === 'true' ? true : false;
+            $data["friday"] = $data["friday"] === 'true' ? true : false;
+            $data["saturday"] = $data["saturday"] === 'true' ? true : false;
             Reminder::find($id)->update($data);
         } catch (Exception $e) {
             $result = false;
